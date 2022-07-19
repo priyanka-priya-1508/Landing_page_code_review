@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sportsverse</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <link href="parallax.css" rel="stylesheet">
+</head>
+
+<body>
+    <section>
+        <img src="" alt="" />
+        <img src="images/3.png" data-speed="5" alt="cloud_img" class="layer" />
+        <img src="images/4.png" alt="cloud_img" data-speed="2" class="layer " />
+        <p class="layer" data-speed="6">About The Project</p>
+        <img src="images/1.png" alt="cloud_img" data-speed="-2" class="cloud1" />
+    </section>
+    <script type="text/javascript">
+        document.addEventListener("mousemove", parallax);
+        function parallax(e) {
+            this.querySelectorAll('.layer').forEach(layer => {
+                const speed = layer.getAttribute('data-speed')
+                const x = (window.innerWidth - e.pageX * speed) / 100
+                const y = (window.innerHeight - e.pageY * speed) / 100
+                layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+            })
+
+        }
+
+    </script>
+    <!-- <div id="container">
+        <img src="https://unsplash.it/1000/1000?random=" />
+        <div class="slide one"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script> -->
+</body>
+
+</html>
